@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script><title></title>
+<style>
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+/* Header/Logo Title */
+.header {
+  text-align: center;
+  background: #1abc9c;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 2%;
+  color: black;
+  font-size: 30px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+  border-radius: 10%;
+}
+
+#example1 {
+  text-align: center;
+  width: 30%;
+  margin-left: 35%;
+  margin-top: 5%;
+  color: black;
+  font-size: 15px;
+  border: 1px solid;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px;
+}
+
+/* Page Content */
+.content {padding:20px;}
+</style>
+</head>
+<body>
+
+<div class="header">
+	
+  <h1>Bank Notes Predictor</h1>
+  <p>Machine Learning Algorithm.</p>
+</div>
+
+<form method="post" style="margin-left: 15%;margin-top: 5%;">
+	<br>
+
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="variance" placeholder="variance (range: -7 to 6)" name="variance" step=0.01 required>
+  </div>
+
+  
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="skewness" placeholder="skewness (range: 0-3)" step=0.01 name="skewness" required>
+  </div>
+
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="curtosis" placeholder="curtosis (range: -5 to 17)" step=0.01 name="curtosis" required>
+  </div>
+  <div class="form-group col-md-6">
+    <input type="number" class="form-control" id="entropy" placeholder="entropy (range: -8 to 2) " step=0.01 name="entropy" required>
+  </div>
+
+  <button type="submit" class="btn btn-outline-primary" style="margin-left:20%;height: 40px;width: 20%;">Predict</button>
+
+</form>
+
+
+
+
+	 {% if y_pred==0 %}
+    <div id="example1">
+    <h6 style="text-shadow: 2px 2px 5px red;">This Note is detected succesfully as Real</h6>
+    </div>
+  {% endif %}
+  {% if y_pred==1 %}
+  <div id="example1">
+  <h6 style="text-shadow: 2px 2px 5px red;">This Note is detected succesfully as Fake.</h6>
+  </div>
+  {% endif %}
+
+
+
+</body>
+</html>

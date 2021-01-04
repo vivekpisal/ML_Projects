@@ -1,0 +1,26 @@
+
+st.success("successful")
+st.info("Information")
+
+if st.checkbox("show/hide"):
+  st.success("showing or Hiding Widget")
+
+
+status=st.radio("what is your status",("Inactive","Active"))
+if status=='Active':
+  st.success("Active Now")
+
+if st.checkbox("Show/Hide"):
+  st.dataframe(df.head())
+
+if st.checkbox("plot"):
+  st.line_chart(df)
+
+  
+uploaded_file = st.file_uploader("text here", type="csv")
+
+
+submit=st.button("submit")
+if submit:
+  result=user2.title(st)
+  st.success(f"{result}")
